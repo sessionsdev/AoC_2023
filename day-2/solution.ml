@@ -43,7 +43,7 @@ let part_1_solver line =
 let reduce_color_sets_to_highest_values color_sets =
     let update_map acc (num, color) =
         match StringMap.find_opt color acc with
-            | Some existing_min -> StringMap.add color (max existing_min num) acc
+            | Some existing_max -> StringMap.add color (max existing_max num) acc
             | None -> StringMap.add color num acc
         in
     let map = List.fold_left update_map StringMap.empty color_sets in
